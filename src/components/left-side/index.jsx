@@ -27,7 +27,7 @@ const LeftSide = ({ setActiveIndex, setMenu }) => {
     });
   }, []);
   return (
-    <div className="lg:w-[75%] pr-20">
+    <div className="lg:w-[75%] lg:pr-20">
       <h1 className="font-dancing text-3xl md:text-7xl font-bold mb-4">
         Lorem Ipsum
       </h1>
