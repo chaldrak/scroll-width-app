@@ -5,8 +5,6 @@ const Loader = () => {
   window.addEventListener("scroll", () => {
     const { clientHeight, scrollHeight, scrollTop } = document.documentElement;
     const scrolledWidth = (scrollTop * 100) / (scrollHeight - clientHeight);
-    console.log("scrolledWidth", scrolledWidth);
-    console.log("scrollTop", scrollTop);
     setWidth(scrolledWidth);
   });
   return (
