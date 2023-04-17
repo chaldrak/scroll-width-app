@@ -1,20 +1,26 @@
 import React, { useEffect, useState } from "react";
-import { GrSun, GrMoon } from "react-icons/gr";
+import { GrSun } from "react-icons/gr";
 import { FiMoon } from "react-icons/fi";
 
 const Button = () => {
-  const [darkMode, setDarkMode] = useState(false);
+  const [mode, setMode] = useState(
+    JSON.parse(localStorage.getItem("mode")) || { dark: false }
+  );
   const handleDarkMode = () => {
-    document.body.classList.toggle("dark");
-    setDarkMode((prev) => !prev);
+    setMode({ dark: !mode.dark });
   };
-  useEffect(() => {}, []);
+  mode.dark
+    ? document.body.classList.add("dark")
+    : document.body.classList.remove("dark");
+  useEffect(() => {
+    localStorage.setItem("mode", JSON.stringify(mode));
+  }, [mode]);
   return (
     <div
       className="fixed bottom-10 right-10 w-12 h-12 shadow-[0_0_10px_black] flex items-center justify-center rounded-full cursor-pointer dark:shadow-[0_0_10px_white] text-white"
       onClick={handleDarkMode}
     >
-      {darkMode ? <FiMoon size={25} /> : <GrSun size={25} />}
+      {mode.dark ? <FiMoon size={25} /> : <GrSun size={25} />}
     </div>
   );
 };
