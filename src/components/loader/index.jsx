@@ -9,7 +9,7 @@ const Loader = () => {
   });
   return (
     <div
-      className="h-2 bg-indigo-600 fixed transition-all"
+      className="h-[6px] bg-blue-600 fixed transition-all z-10"
       style={{ width: `${width}%` }}
     />
   );

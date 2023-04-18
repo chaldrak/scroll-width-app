@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import Paragraph from "../../components/paragraph";
+import { clearText } from "../../utils";
 
 const LeftSide = ({ setActiveIndex, setMenu }) => {
   useEffect(() => {
@@ -7,19 +8,21 @@ const LeftSide = ({ setActiveIndex, setMenu }) => {
     var tab = [];
     for (let index = 0; index < titles.length; index++) {
       const item = {
-        id: titles[index].innerHTML,
+        id: clearText(titles[index].innerHTML),
         title: titles[index].innerHTML,
       };
       tab.push(item);
+      titles[index].id = item.id;
     }
     setMenu(tab);
+    console.log(tab);
 
     window.addEventListener("scroll", () => {
       var activeMenuIndex = 0;
       for (let index = 0; index < titles.length; index++) {
         if (
           titles[index].getBoundingClientRect().top <
-          window.innerHeight * 0.5
+          window.innerHeight * 0.25
         )
           activeMenuIndex = index;
         setActiveIndex(activeMenuIndex);
@@ -40,7 +43,12 @@ const LeftSide = ({ setActiveIndex, setMenu }) => {
         have it, simply because it is pain..."
       </blockquote>
 
-      <section className="grid md:grid-cols-2 lg:grid-cols-1 gap-10 mt-10">
+      <section className="my-10 sticky top-0">
+        <div className="w-full h-[6px] bg-white dark:bg-black" />
+        <div className="w-full h-[50px] hidden border bg-gray-50" />
+      </section>
+
+      <section className="grid md:grid-cols-2 lg:grid-cols-1 gap-10">
         <Paragraph title="What is Lorem Ipsum ?">
           Lorem Ipsum is simply dummy text of the printing and typesetting
           industry. Lorem Ipsum has been the industry's standard dummy text ever
