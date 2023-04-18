@@ -1,12 +1,12 @@
 import React, { useEffect } from "react";
-import { useLocation } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 
 const RightSide = ({ menu, activeIndex }) => {
   const location = useLocation();
   useEffect(() => {
     const hash = location.hash;
-    console.log(hash);
-    const header = document.getElementById(hash);
+    console.log(hash.substring(1));
+    const header = document.getElementById(hash.substring(1));
 
     header && scrollToTarget(header, 45);
 
@@ -33,8 +33,8 @@ const RightSide = ({ menu, activeIndex }) => {
                 "pl-3 relative text-blue-600 font-bold transition-all"
               }`}
             >
-              <a
-                href={item.id}
+              <NavLink
+                to={`#${item.id}`}
                 className={`${index !== activeIndex && "hover:text-gray-500"}`}
               >
                 <span>{item.title}</span>
@@ -44,7 +44,7 @@ const RightSide = ({ menu, activeIndex }) => {
                     "absolute top-0 z-10 -left-[13px] h-full w-full border-l-2 border-blue-600"
                   }`}
                 />
-              </a>
+              </NavLink>
             </li>
           ))}
         </ul>

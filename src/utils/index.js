@@ -6,5 +6,5 @@ export const clearText = (string) => {
     .replace(/[^\w-]/g, "") // supprime les caractères non alphanumériques et non -
     .replace(/-+$/, "") // supprime les tirets en fin de chaîne
     .toLowerCase(); // transforme le tout en minuscules
-  return `#${formattedText}`;
+  return `${formattedText}`;
 };
