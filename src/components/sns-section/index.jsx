@@ -24,7 +24,7 @@ const SNS = () => {
   return (
     <section className="my-10 sticky top-0">
       <div className="w-full h-[6px] bg-white dark:bg-black" />
-      <div className="w-full h-[50px] border-b border-gray-500 bg-white dark:bg-black flex items-center space-x-4">
+      <div className="w-full h-[50px] border-b border-gray-500 bg-white dark:bg-black flex items-center space-x-2 md:space-x-4">
         <span>Partager sur : </span>
         {sns.map((item, index) => (
           <item.button
