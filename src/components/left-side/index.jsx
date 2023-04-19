@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import Paragraph from "../../components/paragraph";
 import { clearText } from "../../utils";
+import SNS from "../sns-section";
 
 const LeftSide = ({ setActiveIndex, setMenu }) => {
   useEffect(() => {
@@ -15,7 +16,6 @@ const LeftSide = ({ setActiveIndex, setMenu }) => {
       titles[index].id = item.id;
     }
     setMenu(tab);
-    console.log(tab);
 
     window.addEventListener("scroll", () => {
       var activeMenuIndex = 0;
@@ -43,10 +43,7 @@ const LeftSide = ({ setActiveIndex, setMenu }) => {
         have it, simply because it is pain..."
       </blockquote>
 
-      <section className="my-10 sticky top-0">
-        <div className="w-full h-[6px] bg-white dark:bg-black" />
-        <div className="w-full h-[50px] hidden border bg-gray-50" />
-      </section>
+      <SNS />
 
       <section className="grid md:grid-cols-2 lg:grid-cols-1 gap-10">
         <Paragraph title="What is Lorem Ipsum ?">

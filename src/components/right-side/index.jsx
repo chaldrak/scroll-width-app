@@ -8,7 +8,7 @@ const RightSide = ({ menu, activeIndex }) => {
     console.log(hash.substring(1));
     const header = document.getElementById(hash.substring(1));
 
-    header && scrollToTarget(header, 45);
+    header && scrollToTarget(header, 70);
 
     function scrollToTarget(element, offset) {
       const elementPosition = element.getBoundingClientRect().top;
