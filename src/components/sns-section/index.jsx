@@ -1,7 +1,7 @@
 import React from "react";
 import {
   FacebookShareButton,
-  InstapaperShareButton,
+  EmailShareButton,
   LinkedinShareButton,
   RedditShareButton,
   TelegramShareButton,
@@ -13,14 +13,14 @@ import {
   AiFillFacebook,
   AiFillLinkedin,
   AiOutlineReddit,
-  AiOutlineInstagram,
+  AiOutlineMail,
 } from "react-icons/ai";
 import { FaWhatsapp, FaTelegram } from "react-icons/fa";
 
 const SNS = () => {
   const shareUrl =
     "https://www.linkedin.com/feed/update/urn:li:activity:7053795712953643008/";
-  const title = "Example Title";
+  const title = "When A Math Teacher Dive Into Code...";
   return (
     <section className="my-10 sticky top-0">
       <div className="w-full h-[6px] bg-white dark:bg-black" />
@@ -31,8 +31,8 @@ const SNS = () => {
             title={title}
             url={shareUrl}
             quote={title}
-            hashtag="article"
-            description="Lorem Ipsum"
+            hashtag="react tailwind react-share scroll"
+            description="When A Math Teacher Dive Into Code..."
           >
             <item.icon size={20} className="hover:text-gray-500" />
           </item.button>
@@ -47,7 +47,7 @@ export default SNS;
 const sns = [
   { button: TwitterShareButton, icon: AiOutlineTwitter },
   { button: FacebookShareButton, icon: AiFillFacebook },
-  { button: InstapaperShareButton, icon: AiOutlineInstagram },
+  { button: EmailShareButton, icon: AiOutlineMail },
   { button: TelegramShareButton, icon: FaTelegram },
   { button: LinkedinShareButton, icon: AiFillLinkedin },
   { button: RedditShareButton, icon: AiOutlineReddit },
