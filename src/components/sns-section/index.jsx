@@ -1,4 +1,5 @@
 import React from "react";
+import ReactGA from "react-ga4";
 import {
   FacebookShareButton,
   EmailShareButton,
@@ -21,6 +22,13 @@ const SNS = () => {
   const shareUrl =
     "https://www.linkedin.com/feed/update/urn:li:activity:7053795712953643008/";
   const title = "When A Math Teacher Dive Into Code...";
+
+  const handleGAEvents = () =>
+    ReactGA.event({
+      category: "your category",
+      action: "your action",
+      label: "your label",
+    });
   return (
     <section className="my-10 sticky top-0">
       <div className="w-full h-[6px] bg-white dark:bg-black" />
@@ -33,6 +41,7 @@ const SNS = () => {
             quote={title}
             hashtag="react tailwind react-share scroll"
             description="When A Math Teacher Dive Into Code..."
+            onClick={() => handleGAEvents}
           >
             <item.icon size={20} className="hover:text-gray-500" />
           </item.button>
