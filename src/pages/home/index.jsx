@@ -8,7 +8,11 @@ const HomePage = () => {
   const [activeIndex, setActiveIndex] = useState(0);
 
   useEffect(() => {
-    ReactGA.pageview(window.location.pathname);
+    ReactGA.send({
+      hitType: "pageview",
+      page: window.location.pathname,
+      title: "Home page",
+    });
   }, []);
 
   return (
