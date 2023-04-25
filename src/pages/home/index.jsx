@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import LeftSide from "../../components/left-side";
 import RightSide from "../../components/right-side";
-import ReactGA from "react-ga";
+import ReactGA from "react-ga4";
 
 const HomePage = () => {
   const [menu, setMenu] = useState([]);
