@@ -33,6 +33,7 @@ const SNS = () => {
             quote={title}
             hashtag="react tailwind react-share scroll"
             description="When A Math Teacher Dive Into Code..."
+            key={index}
           >
             <item.icon size={20} className="hover:text-gray-500" />
           </item.button>
