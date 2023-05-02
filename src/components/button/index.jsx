@@ -17,7 +17,7 @@ const Button = () => {
   }, [mode]);
   return (
     <div
-      className="fixed bottom-10 right-10 w-12 h-12 shadow-[0_0_10px_black] flex items-center justify-center rounded-full cursor-pointer dark:shadow-[0_0_10px_white] text-white"
+      className="fixed bottom-10 right-10 w-12 h-12 shadow-[0_0_10px_black] flex items-center justify-center rounded-full cursor-pointer z-20 dark:bg-dark dark:shadow-[0_0_10px_white] text-white"
       onClick={handleDarkMode}
     >
       {mode.dark ? <FiMoon size={25} /> : <GrSun size={25} />}
