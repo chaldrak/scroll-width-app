@@ -5,7 +5,6 @@ const RightSide = ({ menu, activeIndex }) => {
   const location = useLocation();
   useEffect(() => {
     const hash = location.hash;
-    console.log(hash.substring(1));
     const header = document.getElementById(hash.substring(1));
 
     header && scrollToTarget(header, 70);
