@@ -6,7 +6,7 @@ import SNS from "../sns-section";
 const LeftSide = ({ setActiveIndex, setMenu }) => {
   useEffect(() => {
     const titles = document.querySelectorAll("h2");
-    var tab = [];
+    let tab = [];
     for (let index = 0; index < titles.length; index++) {
       const item = {
         id: clearText(titles[index].innerHTML),
@@ -17,17 +17,22 @@ const LeftSide = ({ setActiveIndex, setMenu }) => {
     }
     setMenu(tab);
 
-    window.addEventListener("scroll", () => {
+    const scrollToHeader = () => {
       var activeMenuIndex = 0;
       for (let index = 0; index < titles.length; index++) {
-        if (
-          titles[index].getBoundingClientRect().top <
-          window.innerHeight * 0.25
-        )
-          activeMenuIndex = index;
+        const currentTitleRect = titles[index].getBoundingClientRect();
+        const isOnScreenTopQuarter =
+          currentTitleRect.top < window.innerHeight * 0.25;
+        if (isOnScreenTopQuarter) activeMenuIndex = index;
         setActiveIndex(activeMenuIndex);
       }
-    });
+    };
+
+    window.addEventListener("scroll", scrollToHeader);
+
+    return () => {
+      window.removeEventListener("scroll", scrollToHeader);
+    };
   }, []);
   return (
     <div className="lg:w-[75%] lg:pr-20">
