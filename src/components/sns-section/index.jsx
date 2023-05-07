@@ -36,6 +36,7 @@ const SNS = () => {
         <span>Partager sur : </span>
         {sns.map((item, index) => (
           <item.button
+            key={index}
             title={title}
             url={shareUrl}
             quote={title}

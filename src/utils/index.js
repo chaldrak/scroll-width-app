@@ -16,7 +16,6 @@ export const getSavedThemeConfig = () => {
   try {
     const savedValue = localStorage.getItem("mode");
     if (savedValue) {
-      console.log(savedValue);
       return JSON.parse(savedValue);
     }
   } catch (_) {}

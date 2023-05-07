@@ -26,7 +26,7 @@ const RightSide = ({ menu, activeIndex }) => {
         <ul className="space-y-3">
           {menu.map((item, index) => (
             <li
-              key={index}
+              key={item.id}
               className={`${
                 index === activeIndex &&
                 "pl-3 relative text-blue-600 font-bold transition-all"
